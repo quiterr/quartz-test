@@ -4,12 +4,13 @@ import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 
+import java.util.Date;
+
 public class ByeJob implements Job{
 
-    private ByeService bs = new ByeService();
-
+    @Override
     public void execute(JobExecutionContext context) throws JobExecutionException {
-        bs.sayGoodbye();
+        System.out.println("Bye geeks! Time is " + new Date());
     }
 }
 
